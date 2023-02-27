@@ -7,6 +7,7 @@ private:
 
 	int xS;
 	int oS;
+	string one, two, three, four, five, six, seven, eight, nine;
 
 
 

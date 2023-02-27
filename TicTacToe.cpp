@@ -2,6 +2,11 @@
 
 int main()
 {
-    
+    TicTacToe ttt;
+    ttt.printTTT();
+
+
+
+
 }
 

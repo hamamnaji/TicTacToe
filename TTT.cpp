@@ -2,11 +2,17 @@
 
 void TicTacToe::xWin()
 {
+	cout << "\n\n\n\n";
+	printTTT();
+	cout << "\nPlayer one won!" << endl;
 	xS++;
 }
 
 void TicTacToe::oWin()
 {
+	cout << "\n\n\n\n";
+	printTTT();
+	cout << "\nPlayer two won!" << endl;
 	oS++;
 }
 
@@ -15,7 +21,7 @@ int TicTacToe::xScore()
 	return xS;
 }
 
-int TicTacToe::yScore()
+int TicTacToe::oScore()
 {
 	return oS;
 }
@@ -63,27 +69,12 @@ void TicTacToe::printTTT()
 
 void TicTacToe::placeX(int a)
 {
-	for (int i = 0; i < 9; i++) {
-
-		if (to_string(a) == boxes[i]) {
-
-			boxes[i] == "X";
-			return;
-		}
-	}
-
+	boxes[a] = "X";
 }
 
 void TicTacToe::placeO(int a)
 {
-	for (int i = 0; i < 9; i++) {
-
-		if (to_string(a) == boxes[i]) {
-
-			boxes[i] == "O";
-			return;
-		}
-	}
+	boxes[a] = "O";
 }
 
 bool TicTacToe::checkWin()
@@ -98,4 +89,28 @@ bool TicTacToe::checkWin()
 	else {
 		return false;
 	}
+}
+
+bool TicTacToe::checkDraw()
+{
+
+	for (int i = 0; i < 9; i++) {
+
+		if (boxes[i] != "X" || boxes[i] != "O") {
+			return false;
+		}
+
+	}
+	return true;
+}
+
+bool TicTacToe::badMove(int a)
+{
+	if (boxes[a] == "X" || boxes[a] == "O") {
+		return true;
+	}
+	else {
+		return false;
+	}
+
 }

@@ -8,6 +8,7 @@ private:
 
 	int xS;
 	int oS;
+	
 	string boxes[9]{"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
 
@@ -16,11 +17,13 @@ public:
 	void xWin();
 	void oWin();
 	int xScore();
-	int yScore();
+	int oScore();
 	TicTacToe();
 	void printTTT();
 	void placeX(int a);
 	void placeO(int a);
 	bool checkWin();
+	bool checkDraw();
+	bool badMove(int a);
 
 };

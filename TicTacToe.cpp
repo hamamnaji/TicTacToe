@@ -24,18 +24,19 @@ int main()
                 if (ttt.badMove(p1 - 1) == false) {
                     ttt.placeX(p1 - 1);
                     chk = 1;
+                    cout << "\n\n\n\n\n\n\n\n\n";
                 }
                 else {
-                    cout << "invalid number, try again (You cannot override a box which already has a X or O tile in it)." << endl;
+                    cout << "\ninvalid number, try again (You cannot override a box which already has a X or O tile in it)." << endl << endl << endl;
                 }
             }
             //check draw or win for player 1
-            if (ttt.checkDraw() == true) {
-                draa = 1;
-                break;
-            }
             if (ttt.checkWin() == 1) {
                 ttt.xWin();
+                break;
+            }
+            if (ttt.checkDraw() == true) {
+                draa = 1;
                 break;
             }
             chk = 0;
@@ -48,21 +49,23 @@ int main()
                 if (ttt.badMove(p2 - 1) == false) {
                     ttt.placeO(p2 - 1);
                     chk = 1;
+                    cout << "\n\n\n\n\n\n\n\n\n";
                 }
                 else {
-                    cout << "invalid number, try again (You cannot override a box which already has a X or O tile in it)." << endl;
+                    cout << "\ninvalid number, try again (You cannot override a box which already has a X or O tile in it)." << endl << endl << endl;
                 }
             }
 
             //check draw or win for player 2
-            if (ttt.checkDraw() == true) {
-                draa = 1;
-                break;
-            }
             if (ttt.checkWin() == 1) {
                 ttt.oWin();
                 break;
             }
+            if (ttt.checkDraw() == true) {
+                draa = 1;
+                break;
+            }
+            
             chk = 0;
 
         }
@@ -79,6 +82,9 @@ int main()
         if (yon == "y" || yon == "Y") {
             exit = 0;
             draa = 0;
+            chk = 0;
+            ttt.reset();
+            cout << "\n\n\n\n\n\n\n\n\n";
         }
         else {
             exit = 1;
@@ -86,7 +92,7 @@ int main()
 
     }
 
-    cout << "\n\n Final scores: ";
+    cout << "\n\nFinal scores: " << endl;
     cout << "X won " << ttt.xScore() << " time(s)." << endl;
     cout << "O won " << ttt.oScore() << " time(s)." << endl;
 

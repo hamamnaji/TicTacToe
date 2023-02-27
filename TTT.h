@@ -18,6 +18,7 @@ public:
 	void oWin();
 	int xScore();
 	int oScore();
+	void reset();
 	TicTacToe();
 	void printTTT();
 	void placeX(int a);

@@ -26,6 +26,13 @@ int TicTacToe::oScore()
 	return oS;
 }
 
+void TicTacToe::reset()
+{
+	for (int i = 0; i < 9; i++) {
+		boxes[i] = to_string(i + 1);
+	}
+}
+
 TicTacToe::TicTacToe()
 {
 
@@ -93,15 +100,20 @@ bool TicTacToe::checkWin()
 
 bool TicTacToe::checkDraw()
 {
-
+	int count = 0;
 	for (int i = 0; i < 9; i++) {
 
-		if (boxes[i] != "X" || boxes[i] != "O") {
-			return false;
+		if (boxes[i] == "X" || boxes[i] == "O") {
+			count++;
 		}
 
 	}
-	return true;
+	if (count == 9) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 bool TicTacToe::badMove(int a)

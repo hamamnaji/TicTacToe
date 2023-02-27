@@ -1,15 +1,14 @@
 #pragma once
 using namespace std;
 #include <iostream>
+#include <string>
 class TicTacToe{
 
 private:
 
 	int xS;
 	int oS;
-	string one, two, three, four, five, six, seven, eight, nine;
-
-
+	string boxes[9]{"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
 
 public:
@@ -20,6 +19,8 @@ public:
 	int yScore();
 	TicTacToe();
 	void printTTT();
-
+	void placeX(int a);
+	void placeO(int a);
+	bool checkWin();
 
 };
